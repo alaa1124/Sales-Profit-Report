@@ -1,0 +1,13 @@
+<odoo>
+    <data>
+
+        <record id="sales_profit_xlsx" model="ir.actions.report">
+            <field name="name">Sales Profit XLSX</field>
+            <field name="model">sales.profit.report.wiz</field>
+            <field name="report_type">xlsx</field>
+            <field name="report_name">sales_profit_report.sales_profit_xlsx</field>
+            <field name="report_file">sales_profit_report.sales_profit_xlsx</field>
+        </record>
+
+    </data>
+</odoo>

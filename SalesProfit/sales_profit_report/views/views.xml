@@ -1,0 +1,36 @@
+<odoo>
+    <data>
+        <!-- This Menu Item must have a parent and an action -->
+
+
+        <record id="sales_profit_report_wiz_view_form" model="ir.ui.view">
+            <field name="name">sales_profit_report_wiz_view_form</field>
+            <field name="model">sales.profit.report.wiz</field>
+            <field name="arch" type="xml">
+                <form>
+                    <group>
+                        <field name="date_from"/>
+                        <field name="date_to"/>
+                        <field name="products_ids"/>
+                        <field name="categories_ids"/>
+                    </group>
+                    <footer>
+                        <button name="print_report" string="Print" type="object" class="btn-primary"/>
+                        <button string="Cancel" class="btn-secondary" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <record id="sales_profit_report_action" model="ir.actions.act_window">
+            <field name="name">Sales Profit Analysis</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">sales.profit.report.wiz</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+
+        <menuitem id="sales_profit_report_menu" name="Sales Profit Report" parent="sale.menu_sale_report"
+                  action="sales_profit_report_action" sequence="99"/>
+    </data>
+</odoo>
